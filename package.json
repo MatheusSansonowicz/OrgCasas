@@ -4,10 +4,14 @@
   "main": "index.js",
   "dependencies": {
     "@expo/metro-runtime": "~56.0.12",
+    "@react-native-async-storage/async-storage": "2.2.0",
     "@react-navigation/native": "^7.3.1",
     "@react-navigation/stack": "^7.10.3",
     "axios": "^1.16.1",
     "expo": "~56.0.4",
+    "expo-auth-session": "~56.0.14",
+    "expo-crypto": "~56.0.4",
+    "expo-sqlite": "~56.0.5",
     "expo-status-bar": "~56.0.4",
     "firebase": "^9.23.0",
     "react": "^19.2.3",
@@ -25,6 +29,7 @@
   },
   "private": true,
   "devDependencies": {
-    "@types/react": "^19.2.15"
+    "@types/react": "^19.2.15",
+    "typescript": "~6.0.3"
   }
 }

@@ -1,4 +1,4 @@
-import { Product } from '../models/Product';
+import { Product } from './models/Product';
 import axios from "axios";
 
 const api = axios.create({ baseURL: 'SUA_API_URL' });

@@ -1,35 +1,29 @@
-import React, { useState } from 'react';
-import { View, TextInput, Button, Text, ActivityIndicator } from 'react-native';
-import { useAuth } from '../hooks/Login';
+import React from 'react';
+import {View, StyleSheet, Text, ActivityIndicator, Button} from 'react-native';
+import { Login } from '../hooks/Login';
 
 export default function LoginScreen() {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const { login, loading, error } = useAuth();
+    const { login, loading } = Login();
 
     return (
-        <View style={{ padding: 20, flex: 1, justifyContent: 'center' }}>
-            <TextInput
-                placeholder="Email"
-                value={email}
-                onChangeText={setEmail}
-                keyboardType="email-address"
-                autoCapitalize="none"
-            />
-            <TextInput
-                placeholder="Senha"
-                value={password}
-                onChangeText={setPassword}
-                secureTextEntry
-            />
+        <View style={styles.container}>
+            <Text style={styles.title}>Bem-vindo ao OrgCasas</Text>
+            <Text style={styles.subtitle}>Gerencie seu lar de forma inteligente.</Text>
 
             {loading ? (
-                <ActivityIndicator size="large" />
+                <ActivityIndicator size="large" color="#4285F4" />
             ) : (
-                <Button title="Entrar" onPress={() => login(email, password)} />
+                <Button
+                    title="Continuar com Google"
+                    onPress={login}
+                />
             )}
-
-            {error && <Text style={{ color: 'red' }}>{error}</Text>}
         </View>
     );
 }
+
+const styles = StyleSheet.create({
+    container: { flex: 1, justifyContent: 'center', alignItems: 'center', padding: 20 },
+    title: { fontSize: 24, fontWeight: 'bold', marginBottom: 10 },
+    subtitle: { fontSize: 16, color: 'gray', marginBottom: 30 }
+});

@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Button, ActivityIndicator } from 'react-native';
-import { useBarcodeScanner } from '../hooks/useInventory';
+import { useBarcodeScanner } from '../hooks/UseInventory';
 
 export default function ScannerScreen() {
     const { fetchProduct, loading } = useBarcodeScanner();
